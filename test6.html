@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        body, html{
+            height: 100%;
+            margin: 0;
+        }
+        nav{
+            overflow: auto;
+        }
+        a.tablink{
+            display: inline-block;
+            float: left;
+            background: #333;
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 18px;
+            width: 25%;
+            text-align: center;
+            text-decoration: none;
+            font-variant: small-caps;
+            transition: 300ms;
+        }
+        a.tablink:hover{
+            background-color: #888;
+        }
+        .tabcontent{
+            color: #fff;
+            padding: 100px 50px;
+            /* display: none; */
+            height: 100%;
+        }
+        #about{
+            background-color: salmon;
+        }
+        #product{
+            background-color: olive;
+        }
+        #community{
+            background-color: pink;
+        }
+        #contact{
+            background-color: navy;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="javascript:void(0)" id ="default" class="tablink" onclick="tabPage('about', this, 'salmon')">About</a>
+        <a href="javascript:void(0)" class="tablink" onclick="tabPage('product',this,'olive')">Product</a>
+        <a href="javascript:void(0)" class="tablink" onclick="tabPage('community', this, 'pink')">Community</a>
+        <a href="javascript:void(0)" class="tablink" onclick="tabPage('contact', this, 'navy')">Contact</a>
+    </nav>
+    <div id="about" class="tabcontent">
+        <h1>About</h1>
+        <p>부끄러운 멀듯이, 별 거외다. 노새, 별이 파란 너무나 이름과, 밤을 언덕 노루, 슬퍼하는 버리었습니다. </p>
+        <p> 하나 오는 별에도 아침이 멀리 추억과 마디씩 너무나 까닭입니다.</p>
+    </div>
+    <div id="product" class="tabcontent">
+        <h1>Produdct</h1>
+        <p>아직 그리고 무덤 경, 이 마리아 추억과 청춘이 까닭입니다. </p>
+        <p>불러 나는 내 까닭이요, 별에도 둘 덮어 있습니다. 이국 이름자를 써 남은 때 북간도에 다 거외다.</p>
+    </div>
+    <div id="community" class="tabcontent">
+        <h1>Community</h1>
+        <p>마리아 파란 무엇인지 이런 불러 써 묻힌 흙으로 계십니다. 하나에 새겨지는 때 어머니, 강아지, 겨울이 나는 있습니다.</p>
+        <p>다 사랑과 차 봅니다.</p>
+    </div>
+    <div id="contact" class="tabcontent">
+        <h1>Contact</h1>
+        <p>파란 나의 오는 별빛이 별이 버리었습니다. 어머니, 비둘기, 위에 계집애들의 이 애기 노새, 봅니다. </p>
+        <p>다 아침이 지나고 잠, 듯합니다. 보고, 무엇인지 별을 옥 내일 오면 봅니다.</p>
+    </div>
+    <script>
+        function tabPage(pageName, el, color){
+            let i, tabcontent, tablink;
+            tabcontent=document.getElementsByClassName("tabcontent");
+            tablink = document.getElementsByClassName("tablink");
+            for(i=0; i<tabcontent.length; i++){
+                tabcontent[i].style.display = "none";
+            }
+            for(i = 0; i<tablink.length; i++){
+                tablink[i].style.backgroundColor ="";
+            }
+            document.getElementById(pageName).style.display = "block";
+            el.style.backgroundColor = color;
+            }
+
+            document.getElementById("default").click();
+    </script>
+</body>
+</html>
